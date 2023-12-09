@@ -1,0 +1,87 @@
+<nav class="navbar navbar-dark bg-dark">
+    <div class="container-fluid " >
+        <button type="button" class="btn btn-light" routerLink="">Home</button>
+        <button type="button" class="btn btn-warning"  routerLink="/add-action">Add Action</button>
+
+
+    </div>
+  </nav>
+<div style="padding: 20px; border: 4px solid whitesmoke;" class="card">
+
+
+<div class="" style="margin-top: 100px; padding: 10px;" >
+    <table class="table">
+        <thead>
+          <tr>
+            <th scope="col">Nom d'action</th>
+            <th scope="col">Objectif</th>
+            <th scope="col">Responsable</th>
+            <th scope="col">Nombre de personnes</th>
+            <th scope="col">Date</th>
+            
+          </tr>
+        </thead>
+        <tbody>
+          <tr  *ngFor="let action of actions">
+            <td>{{action.nom}}</td>
+            <td> {{action.objectif}} </td>
+            <td> {{action.responsable}} </td>
+            <td> {{action.nbpersonnes}} </td>
+            <td> {{action.date}} </td>
+            <td> <button class="btn btn-success" data-bs-toggle="modal" data-bs-target="#exampleModal" (click)="modifier(action.id)">Modifer</button>
+
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5" id="exampleModalLabel">Modifier votre évenement</h1>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <form [formGroup]="actionForm">
+          <div class="mb-3">
+            <label for="Nom action" class="form-label">Nom d'action</label>
+            <input type="text" class="form-control" formControlName="nom" aria-describedby="emailHelp">
+          </div>
+          <div class="mb-3">
+            <label for="Objectif" class="form-label">Objectif</label>
+            <input type="text" class="form-control" placeholder="objectif de l'evenement" formControlName="objectif">
+          </div>
+          <div class="mb-3">
+            <label for="Responsable" class="form-label"> Responsable</label>
+            <input type="text" class="form-control"  formControlName="responsable">
+
+   </div>
+          <div class="mb-3">
+            <label for="Nombre de responsable" class="form-label">Nombre de responsable</label>
+            <input type="text" class="form-control" formControlName="nbpersonnes" id="" aria-describedby="emailHelp">
+          </div>
+          <div class="mb-3">
+            <label for="Nom action" class="form-label">date</label>
+            <input type="date" class="form-control" formControlName="date" id="" aria-describedby="emailHelp">
+          </div>
+        </form>
+      </div>
+      <div class="modal-footer" *ngFor="let action of actions">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Annuler</button>
+        <button type="button" class="btn btn-danger" (click)="savemodification(action.id)">Modifier</button>
+      </div>
+    </div>
+  </div>
+</div>
+            
+            </td>
+            <td> <button class="btn btn-warning" (click)="delete(action.id)">Supprimer</button> </td>
+
+
+           
+
+          </tr>
+          
+          
+        </tbody>
+      </table>
+  </div>
+</div>

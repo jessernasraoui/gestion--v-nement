@@ -1,0 +1,108 @@
+<div>
+  <nav class="navbar navbar-dark bg-dark" style="height: 50px;">
+  <div class="container-fluid " >
+      <button type="button" class="btn btn-warning mt-2 ms-1" routerLink="">Home</button>
+      <button type="button" class="btn btn-warning mt-2 me-2" routerLink="/actions">Actions List</button>
+
+
+
+  </div>
+</nav>
+<section style="background-color: rgb(210, 245, 233);">
+<div class="demo-page " >
+
+
+   
+    <main class="demo-page-content">
+     
+  
+     
+  <form [formGroup] = "formsignin">
+     
+  
+      <section>
+       
+  
+        <div class="nice-form-group">
+          <label>Nom de l'action</label>
+          <input type="text" placeholder="Nom complet" value="" formControlName="nom" />
+        </div>
+  
+        <div class="nice-form-group">
+          <label>Objectif</label>
+          <input type="text" placeholder="objectif de l'action " value="" formControlName="objectif" />
+        </div>
+  
+        <div class="nice-form-group" >
+          <label>Responsable</label>
+<select name="responsable"   formControlName="responsable">
+  <option *ngFor="let res of responsable" value="{{res.nom}}">{{res.nom}}</option>
+</select>      
+              </div>
+  
+        <div class="nice-form-group">
+          <label>Nombre de personnes</label>
+          <input type="text" placeholder="3" value="" formControlName="nbpersonnes"/>
+        </div>
+  
+        <div class="nice-form-group">
+          <label>Date</label>
+          <input type="date" placeholder="" formControlName="date" />
+        </div>
+  
+        <div class="nice-form-group">
+            <button class="btn btn-danger "routerLink="">Annuler</button>
+
+            <button class="btn btn-primary ms-1" (click)="save()">Ajouter</button>
+
+          </div>
+          
+        
+      </section>
+  
+  
+    </form>
+  
+     
+  
+    </main>
+  </div></section>
+
+
+
+  <!--div style="width: 50%; margin-left: 150px; padding: 15px ; " class="card mt-5" > 
+    
+   <div style="border: 5px solid white">
+    <form  class="" [formGroup] = "formsignin">
+      <div class="mb-3">
+        <label for="Nom" class="form-label">Nom</label>
+        <input type="text" class="form-control" placeholder="Nom complet" formControlName="nom" >
+      </div>
+      <div class="mb-3">
+        <label for="objectif" class="form-label">Objectif</label>
+        <input type="text" placeholder="objectif" class="form-control" id="exampleInputPassword1" formControlName="objectif">
+      </div>
+      <div class="mb-3">
+        <label for="responsable" class="form-label">Responsable</label>
+        <select name="responsable" class="form-control" formControlName="responsable"  >
+          <option *ngFor="let res of responsable" value="{{res.nom}}">{{res.nom}} </option>
+        </select> 
+      </div>
+      
+
+      <div class="mb-3">
+        <label for="nbpersonnes" class="form-label">Nombre personnes</label>
+        <input type="text" placeholder="0" value="" formControlName="nbpersonnes" class="form-control" id="exampleInputPassword1" formControlName="nbpersonnes" >
+      </div>
+     <div class="mb-3">
+      <label>Date</label>
+          <input type="date" class="form-control" placeholder="" formControlName="date" />
+     </div>
+     <button class="btn btn-danger "routerLink="">Annuler</button>
+
+     <button class="btn btn-primary ms-1" (click)="save()">Ajouter</button>
+    </form>
+   </div>
+    
+  </div-->
+  </div>

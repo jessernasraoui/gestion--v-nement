@@ -1,0 +1,38 @@
+{
+  "responsable": [
+    {
+      "nom": "Ahmed",
+      "age": 23
+    },
+    {
+      "nom": "Chiheb",
+      "age": 25
+    },
+    {
+      "nom": "Wael",
+      "age": 26
+    },
+    {
+      "nom": "Moez",
+      "age": 29
+    }
+  ],
+  "actions": [
+    {
+      "id": 1,
+      "nom": "test",
+      "objectif": "test",
+      "responsable": "Ahmed",
+      "nbpersonnes": "3",
+      "date": "2023-12-28"
+    },
+    {
+      "id": 2,
+      "nom": "test",
+      "objectif": "test",
+      "responsable": "Chiheb",
+      "nbpersonnes": "4",
+      "date": "2023-12-15"
+    }
+  ]
+}
